@@ -1,0 +1,51 @@
+<!-- <div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active"><a ui-sref="pending">Home</a></li>
+    <li><a ui-sref="submitpage">Submit</a></li>
+  </ul>
+  <h3 class="text-muted">omg! shows</h3>
+</div>
+ -->
+
+<h3>Shows awaiting your approval:</h3>
+<div ng-repeat="(id, gig) in gigs">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div>
+        <dl class="dl-horizontal">
+            <dt>Date:</dt>
+            <dd>{{gig.Date | date}}</dd>
+          <div ng-show="gig.Time">
+            <dt>Set Time:</dt>
+            <dd>{{gig.Time | date:'h:mma'}}</dd>
+          </div>
+          <div ng-show="gig.Pay">
+            <dt>Pay:</dt>
+            <dd>{{gig.Pay | currency}}</dd>
+          </div>
+          <div ng-show="gig.Venue">
+            <dt>Venue:</dt>
+            <dd>{{gig.Venue}}</dd>
+          </div>
+          <div ng-show="gig.Details">
+            <dt>Details:</dt> 
+            <dd>{{gig.Details}}</dd>
+          </div><br>
+
+          <div ng-show="!gig.confirmed">
+            <!-- <dt><h4>Confirm:</h4></dt> -->
+            <dd><h4>Click <a ng-click="confirm(id)">here</a> to confirm that you wanna play this show.</h4></dd>
+          </div>
+
+          <div class="alert alert-success" ng-show="gig.confirmed" style="text-align: center">
+            <!-- TODO: get rid of that inline css -->
+            You've confirmed your availability for this show. When everyone else has confirmed, it'll be added to your calendar. To unconfirm, click <a ng-click="unconfirm(id)">here</a>.
+          </div>
+        
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>Shows awaiting others' approval:</h3>

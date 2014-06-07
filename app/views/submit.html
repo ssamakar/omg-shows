@@ -1,0 +1,80 @@
+<!-- <div class="header">
+	<ul class="nav nav-pills pull-right">
+	  <li><a ui-sref="pending">Home</a></li>
+	  <li class="active"><a ui-sref="submitpage">Submit</a></li>
+	</ul>
+	<h3 class="text-muted">omg! shows</h3>
+</div>
+<br> -->
+<H3>Submit a new show:</H3>
+<br>
+<p style="text-align: center">Fill out as much information as you can. We'll need to know the date for sure.</p><br>
+
+<form name="gigForm" class="form-horizontal" role="form">
+
+  <div class="form-group">
+    <label for="date" class="col-sm-2 control-label">Date</label>
+    <div class="col-sm-10">
+      <input type="date" class="form-control" id="date" ng-model="potentialGig.Date">
+      <!-- TODO: add required to this input, it's currently gone to make testing faster -->
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="time" class="col-sm-2 control-label">Set Time</label>
+    <div class="col-sm-10">
+      <timepicker ng-model="potentialGig.Time" id="time" hour-step="1" minute-step="5" placeholder="14:00"></timepicker>
+<!--       <input type="time" class="form-control" id="time" placeholder="What time does our set start?" ng-model="potentialGig.Time"> -->
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="pay" class="col-sm-2 control-label">Pay</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="pay" placeholder="$$$ numbers only!" ng-model="potentialGig.Pay">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="venue" class="col-sm-2 control-label">Venue</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="venue" placeholder="Tell us the venue or the city." ng-model="potentialGig.Venue">
+    </div>
+  </div>
+
+<!--   <div class="form-group">
+    <label for="soundcheck" class="col-sm-2 control-label">Soundcheck</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="soundcheck" placeholder="What time is soundcheck?" ng-model="potentialGig.Soundcheck">
+    </div>
+  </div> -->
+
+  <div class="form-group">
+    <label for="details" class="col-sm-2 control-label">Details</label>
+    <div class="col-sm-10">
+      <textarea class="form-control" id="details" placeholder="Tell us about openers, headliners, age restrictions, soundcheck time, or anything else you think we should know." ng-model="potentialGig.Details"></textarea>
+    </div>
+  </div>
+
+<!--   <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Remember me
+        </label>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button id="submitButton" type="submit" class="btn btn-primary" ng-click="gigForm.$valid && submit(potentialGig)">Submit!</button>
+      <button type="submit" class="btn btn-default" ng-click="reset()">Clear</button>
+      <button type="button" class="btn btn-danger" ng-show="dateCheck">Fill in the date!</button>
+    </div>
+  </div>
+
+</form>
+<!-- 
+<pre>form = {{potentialGig | json}}</pre>
+<pre>submitted = {{gigDetailsFromForm | json}}</pre> -->
