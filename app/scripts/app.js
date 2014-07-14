@@ -1,5 +1,7 @@
 'use strict';
 
+var mongo = require('mongodb').MongoClient;
+
 var app = angular.module('appointmentMakerApp', ['ui.router', 'ui.bootstrap', 'firebase']);
 
 var chatRef = new Firebase('https://flickering-fire-9095.firebaseio.com');
