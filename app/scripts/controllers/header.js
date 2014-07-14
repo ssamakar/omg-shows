@@ -11,4 +11,9 @@ angular.module('appointmentMakerApp')
   		return auth.login('google');
   	}
 
+  	$scope.logout = function(){
+  		console.log("logging out")
+  		return auth.logout();
+  	}
+
   });

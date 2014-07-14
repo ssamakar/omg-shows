@@ -34,11 +34,10 @@
 
           <div ng-show="!gig.confirmed">
             <!-- <dt><h4>Confirm:</h4></dt> -->
-            <dd><h4>Click <a ng-click="confirm(id)">here</a> to confirm that you wanna play this show.</h4></dd>
+            <h4 class="centered">Click <a ng-click="confirm(id)">here</a> to confirm that you wanna play this show.</h4>
           </div>
 
-          <div class="alert alert-success" ng-show="gig.confirmed" style="text-align: center">
-            <!-- TODO: get rid of that inline css -->
+          <div class="alert alert-success centered" ng-show="gig.confirmed">    
             You've confirmed your availability for this show. When everyone else has confirmed, it'll be added to your calendar. To unconfirm, click <a ng-click="unconfirm(id)">here</a>.
           </div>
         
