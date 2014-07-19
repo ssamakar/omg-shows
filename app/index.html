@@ -23,17 +23,19 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-
     <div class="container">
       <div class="header" ng-controller="HeaderCtrl">
         <ul class="nav nav-pills pull-right">
           <li ng-class="{ active: isActive('/pending')}"><a ui-sref="pending">Home</a></li>
           <li ng-class="{ active: isActive('/')}"><a ui-sref="submitpage">Submit</a></li>
-          <!-- <li ng-click="loginBox()"><a>Login</a></li> -->
+          <li ng-click="loginBox()"><a>Login</a></li>
         </ul>
         <h3 class="text-muted">omg! shows</h3>
-        <!-- <h2 ng-show="auth.user">Saba is logged in.</h2> -->
+        AUTH: {{auth}}
+        AUTH.USR: {{user}}
+        thing is{{thing}}
+        othrThing {{otherThing}}
+        <h4 ng-show="user">Saba is logged in.</h4>
       </div>
       <div ui-view></div>
       <div class="footer" ng-controller="HeaderCtrl">
@@ -79,6 +81,7 @@
         <script src="scripts/controllers/submit.js"></script>
         <script src="scripts/services/gigservice.js"></script>
         <script src="scripts/controllers/header.js"></script>
+        <script src="scripts/services/loginservice.js"></script>
         <!-- endbuild -->
         <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
         <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.js"></script>
