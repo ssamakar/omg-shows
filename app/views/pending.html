@@ -8,7 +8,9 @@
  -->
 
 <h3>Shows awaiting your approval:</h3>
-<div ng-repeat="(id, gig) in gigs">
+<input ng-model="searchInput"></input>
+<span>{{searchInput}}</span>
+<div ng-repeat="(id, gig) in gigs | filter:searchInput">
   <div class="panel panel-default">
     <div class="panel-body">
       <div>
